@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Count the number of inversions in a given array
 # Input: array (one number per line)
 # Output (STDOUT): number of inversions
@@ -41,6 +42,7 @@ def sort_count(arr, start, end):
   return inv1 + inv2 + inv_this
 
 # Main
+arr = []
 for line in sys.stdin:
   line = line.strip()
   if len(line) == 0:
@@ -55,7 +57,7 @@ num_inv = sort_count(arr, 0, len(arr))
 
 print "Validating sorted array."
 success = True
-for i in range(len(arr-1)):
+for i in range(len(arr)-1):
   if arr[i] > arr[i+1]:
     success = False
     print "Failed. arr[%d] = %d > arr[%d] = %d"%(i, arr[i], i+1, arr[i+1])
